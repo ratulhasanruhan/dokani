@@ -2,7 +2,6 @@ import 'package:dokani/widget/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/product_controller.dart';
-import '../utils/routes.dart';
 import '../widget/shimmer_loader.dart';
 
 class ProductList extends StatelessWidget {

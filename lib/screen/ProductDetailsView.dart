@@ -20,20 +20,23 @@ class ProductDetailsView extends StatelessWidget {
           children: [
             SizedBox(
               height: 250,
-              child: PageView.builder(
-                itemCount: product.images.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.network(
-                        product.images[index],
-                        fit: BoxFit.cover,
+              child: Hero(
+                tag: 'product-${product.id}',
+                child: PageView.builder(
+                  itemCount: product.images.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.network(
+                          product.images[index],
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 16),
